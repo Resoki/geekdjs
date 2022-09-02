@@ -8,7 +8,7 @@ const { REST } = require('@discordjs/rest')
 const AsciiTable = require('ascii-table');
 const table = new AsciiTable().setHeading('Slash Commands', 'Stats').setBorder('|', '=', "0", "0")
 
-const TOKEN = process.env.TOKEN;
+const TOKEN = 'ODQ3Mzc3MzI1MTM2ODA1OTA4.Gs6nSd.WkjBLVcX1cq3sgSviUmoJQ65jroLbMlv-2gHJs';
 const CLIENT_ID = process.env.CLIENT_ID;
 
 const rest = new REST({ version: '9' }).setToken(TOKEN);
@@ -44,14 +44,14 @@ module.exports = (client) => {
 	(async () => {
 			try {
 				await rest.put(
-					process.env.GUILD_ID ?
-					Routes.applicationGuildCommands(CLIENT_ID, process.env.GUILD_ID) :
-					Routes.applicationCommands(CLIENT_ID), 
+					'965542937343692820' ?
+					Routes.applicationGuildCommands('847377325136805908', '965542937343692820') :
+					Routes.applicationCommands('847377325136805908'), 
 					{ body: slashCommands }
 				);
 				console.log(chalk.yellow('Slash Commands • Registered'))
 			} catch (error) {
-				console.log(error);
+				console.log('error refresh slash', error);
 			}
 	})();
 };

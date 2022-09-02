@@ -7,6 +7,6 @@ module.exports = {
     category: "info",
 	cooldown: 3000,
 	run: async (client, interaction) => {
-		interaction.reply({ content: `🏓 Pong! Latence : **${Math.round(client.ws.ping)} ms**` })
+		return interaction.reply({ content: `🏓 Pong! Latence : **${Math.round(client.ws.ping)} ms**` })
 	}
 };

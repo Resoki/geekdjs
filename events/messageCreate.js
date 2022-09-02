@@ -11,7 +11,7 @@ client.on('messageCreate', async message => {
 	const args = message.content.slice(prefix.length).trim().split(/ +/g); 
 	const cmd = args.shift().toLowerCase();
 	if(cmd.length == 0 ) return;
-	let command = client.commands.get(cmd)
+	let command = client.commands.get(cmd);
 	if(!command) command = client.commands.get(client.aliases.get(cmd));
 	
 	if(command) {
@@ -22,13 +22,13 @@ client.on('messageCreate', async message => {
 						const userPerms = new EmbedBuilder()
 						.setDescription(`🚫 ${message.author}, Vous n'avez pas la permissions d'utiliser cette commande ! : \`${command.userPerms}\``)
 						.setColor('Red')
-						return message.reply({ embeds: [userPerms] })
+						return message.reply({ embeds: [userPerms] });
 					}
 					if(!message.guild.members.cache.get(client.user.id).permissions.has(PermissionsBitField.resolve(command.botPerms || []))) {
 						const botPerms = new EmbedBuilder()
 						.setDescription(`🚫 ${message.author}, Je n'ai pas la permissions d'utiliser cette commande ! : \`${command.botPerms}\``)
 						.setColor('Red')
-						return message.reply({ embeds: [botPerms] })
+						return message.reply({ embeds: [botPerms] });
 					}
 				}
 
@@ -43,17 +43,17 @@ client.on('messageCreate', async message => {
 						const userPerms = new EmbedBuilder()
 						.setDescription(`🚫 ${message.author}, Vous n'avez pas la permissions d'utiliser cette commande ! : \`${command.userPerms}\``)
 						.setColor('Red')
-						return message.reply({ embeds: [userPerms] })
+						return message.reply({ embeds: [userPerms] });
 					}
 				
 					if(!message.guild.members.cache.get(client.user.id).permissions.has(PermissionsBitField.resolve(command.botPerms || []))) {
 						const botPerms = new EmbedBuilder()
 						.setDescription(`🚫 ${message.author}, Je n'ai pas la permissions d'utiliser cette commande ! : \`${command.botPerms}\``)
 						.setColor('Red')
-						return message.reply({ embeds: [botPerms] })
+						return message.reply({ embeds: [botPerms] });
 					}
 			}
-			command.run(client, message, args)
+			command.run(client, message, args);
 		}
 	}
 	
