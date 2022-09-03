@@ -1,4 +1,5 @@
 const { EmbedBuilder, ActionRowBuilder, ButtonBuilder, ApplicationCommandType, ButtonStyle } = require('discord.js');
+const { readdirSync } = require("fs");
 
 module.exports = {
 	name: 'help',
@@ -7,14 +8,39 @@ module.exports = {
 	type: ApplicationCommandType.ChatInput,
     category: "core",
 	run: async (client, interaction) => {
-        if(!interaction.isCommand()) return;
-        const embed = new EmbedBuilder()
-            .setColor("#03fcdb")
-            .setTitle(`${client.guild}`)
-            .setThumbnail("https://i.imgur.com/PGSEC0S.png")
-            .setDescription(' Voici la liste complète des commandes disponible ').addFields([
-                { name: '<:info:998897408475926558>・Informations', value: '`/help` ➜ Affiche la liste des commandes\n`/ping` ➜ Répond pong' }
-            ])
+                // Get the slash commands of a Tickets category
+                const coreCommandsList = [];
+                readdirSync(`./slashCommands/core`).forEach((file) => {
+                    const filen = require(`../../slashCommands/core/${file}`);
+                    const name = `\`${filen.name}\``
+                    coreCommandsList.push(name);
+                });
+
+                  // Get the slash commands of a Tickets category
+                  const utilityCommandsList = [];
+                  readdirSync(`./slashCommands/utility`).forEach((file) => {
+                      const filen = require(`../../slashCommands/utility/${file}`);
+                      const name = `\`${filen.name}\``
+                      utilityCommandsList.push(name);
+                  });
+
+                            // Get the slash commands of a Tickets category
+                  const infoCommandsList = [];
+                  readdirSync(`./slashCommands/info`).forEach((file) => {
+                      const filen = require(`../../slashCommands/info/${file}`);
+                      const name = `\`${filen.name}\``
+                      infoCommandsList.push(name);
+                  });
+                // This is what it commands when using the command without arguments
+                const helpEmbed = new EmbedBuilder()
+                .setTitle(`${client.user.username} 2022`)
+                .setDescription(` Hello **<@${interaction.member.id}>**, Je suis le bot d'assistance <@${client.user.id}>.  \nTu peux utiliser \`/help <slash_command>\` pour voir plus d'info des SlashCommands!`)
+                .addFields("🤖 - Utility SlashCommands", utilityCommandsList.map((data) => `${data}`).join(", "))
+                .addFields("🛠 - Info SlashCommands", infoCommandsList.map((data) => `${data}`).join(", "))
+                .addFields("📩 - Core SlashCommands", coreCommandsList.map((data) => `${data}`).join(", "))             
+                .setColor(client.config.embedColor)
+                .setFooter({ text: `${client.config.embedfooterText}`, iconURL: `${client.user.displayAvatarURL()}` });
+
         
         const helpButtons = new ActionRowBuilder()
         .addComponents([

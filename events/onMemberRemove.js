@@ -5,7 +5,7 @@ const Canvas = require('@napi-rs/canvas');
 const { request } = require('undici');
 const { readFile } = require('fs/promises');
 
-client.on('guildMemberAdd', async member => {
+client.on('guildMemberRemove', async member => {
     try {
     const applyText = (canvas, text) => {
         do {
@@ -28,15 +28,12 @@ client.on('guildMemberAdd', async member => {
     await context.fillText(`${member.user.username}`, 670 / 2.5, 250 / 1.8);
 
     let text = '';
-    await !member.user.bot ? text = 'vient de rejoindre le serveur !': text = `un bot vient de rejoindre le serveur !`;
+    await !member.user.bot ? text = 'vient de quitter le serveur !': text = `un bot vient de quitter le serveur !`;
     context.font = '28px sans-serif';
     
-    await context.fillText(`${await text}`, 670 / 2.5, 320 / 1.8);
+    context.fillText(`${await text}`, 670 / 2.5, 320 / 1.8);
 
-    // const { body } = await request(member.user.displayAvatarURL({ extension: 'png' }));
-    console.log(await member.user)
     const avatar = await Canvas.loadImage(member.user.displayAvatarURL({ extension: 'jpg' }));
-    console.log('add5')
     context.beginPath();
     context.arc(125, 125, 100, 0, Math.PI * 2, true);
     context.closePath();

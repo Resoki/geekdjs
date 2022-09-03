@@ -7,12 +7,34 @@ const { ApplicationCommandType,
 = require('discord.js');
     
 module.exports = {
-    name: 'reactionrole',
+    name: 'menud',
     description: "Envoyer le pannel de reaction role !",
     type: ApplicationCommandType.ChatInput,
     category: "utility",
     cooldown: 3000,
     options: [{
+        
+        name: 'titre',
+        description: 'Le titre du pannel.',
+        type: ApplicationCommandOptionType.String,
+        required: true
+    },
+    {
+        
+        name: 'description',
+        description: 'La description du pannel',
+        type: ApplicationCommandOptionType.String,
+        required: true
+    },
+    {
+        
+        name: 'role',
+        description: 'La description du pannel',
+        type: ApplicationCommandOptionType.Role,
+        required: true
+    },
+    {
+        
         name: 'channel',
         description: 'Le channel où envoyer le pannel.',
         type: ApplicationCommandOptionType.Channel,
@@ -26,6 +48,9 @@ module.exports = {
             }
 
             const channel = interaction.options.getChannel('channel');
+            const title = interaction.options.getString('titre');
+            const description = interaction.options.getString('description');
+            const roles = interaction.options.getRole('role');
 
             const row = new ActionRowBuilder()
             .addComponents(
@@ -57,8 +82,8 @@ module.exports = {
             );
 
             const embedSuccess = new EmbedBuilder()
-            .setTitle('Reaction Role')
-            .setDescription(`Choisi le rôle que tu souhaites recevoir !`)
+            .setTitle(`${title}`)
+            .setDescription(`${description}`)
             .setThumbnail('https://actualnewsmagazine.com/wp-content/uploads/2022/06/1655809998_Comment-redemarrer-Discord-980x400.jpg')
             .setColor(0x0099FF);
 

@@ -17,6 +17,7 @@
     "@napi-rs/canvas": "^0.1.29",
     "api": "^4.5.2",
     "ascii-table": "^0.0.9",
+    "axios": "^0.27.2",
     "better-sqlite3": "^7.6.2",
     "chalk": "^2.4.1",
     "discord-api-types": "^0.30.0",
