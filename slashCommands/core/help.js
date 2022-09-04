@@ -35,22 +35,19 @@ module.exports = {
                 const helpEmbed = new EmbedBuilder()
                 .setTitle(`${client.user.username} 2022`)
                 .setDescription(` Hello **<@${interaction.member.id}>**, Je suis le bot d'assistance <@${client.user.id}>.  \nTu peux utiliser \`/help <slash_command>\` pour voir plus d'info des SlashCommands!`)
-                .addFields("🤖 - Utility SlashCommands", utilityCommandsList.map((data) => `${data}`).join(", "))
-                .addFields("🛠 - Info SlashCommands", infoCommandsList.map((data) => `${data}`).join(", "))
-                .addFields("📩 - Core SlashCommands", coreCommandsList.map((data) => `${data}`).join(", "))             
-                .setColor(client.config.embedColor)
-                .setFooter({ text: `${client.config.embedfooterText}`, iconURL: `${client.user.displayAvatarURL()}` });
-
+                .addFields({name: "🤖 - Utility SlashCommands", value: utilityCommandsList.map((data) => `${data}`).join(", "), inline: true})
+                .addFields({name: "🛠 - Info SlashCommands",value: infoCommandsList.map((data) => `${data}`).join(", "), inline: true})
+                 .addFields({name: "📩 - Core SlashCommands",value: coreCommandsList.map((data) => `${data}`).join(", "), inline: true})             
         
         const helpButtons = new ActionRowBuilder()
         .addComponents([
             new ButtonBuilder()
                 .setLabel('Site Web')
-                .setURL("https://fly-bot.space/")
+                .setURL("https://resoki-dev.tech")
                 .setStyle(ButtonStyle.Link)
                 .setEmoji("🌐")
             ]);
 
-        return interaction.reply({ embeds: [embed], components: [helpButtons] });
+        return interaction.reply({ embeds: [helpEmbed], components: [helpButtons] });
     }
 };

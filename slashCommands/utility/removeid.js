@@ -7,6 +7,7 @@ const { ApplicationCommandType,
 
 const { QuickDB } = require('quick.db');
 const db = new QuickDB(); // using default driver
+const {deleteIdUser, getIdUser} = require('../../models/userModel')
 
 module.exports = {
     name: 'removeid',
@@ -18,15 +19,8 @@ module.exports = {
         try {
             if(!interaction.isCommand()) return;
             
-            const idMemberDatabase = await db.get(`${interaction.member.user.id}_idGame`);
-            if(!idMemberDatabase ||idMemberDatabase === null) {
-                return interaction.reply({content: `❌ | Tu n'as pas d'id enregistré ! **/registerid** pour en enregistrer une !`, ephemeral: true});
-            }
-            
-            await db.delete(`${interaction.member.user.id}_idGame`)
-            .then(async()=> {
-                return interaction.reply({content: `✅ | Ton ID a été supprimé !`, ephemeral: true})  
-            })
+            await deleteIdUser(interaction.member.user.id, interaction)
+        
         }
         catch(err) {
             console.log(err)

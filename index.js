@@ -6,13 +6,17 @@ const client = new Client({
 		GatewayIntentBits.GuildPresences, 
 		GatewayIntentBits.GuildMessageReactions, 
 		GatewayIntentBits.DirectMessages,
-		GatewayIntentBits.GuildMembers
+		GatewayIntentBits.GuildMembers,
+		GatewayIntentBits.MessageContent
 	], 
 	partials: [Partials.Channel, Partials.Message, Partials.User, Partials.GuildMember, Partials.Reaction] 
 });
 
+const {token} = require('./config.json')
+
 const config = require('./config.json');
 require('dotenv').config()
+const handler = require("./handlers/index");
 
 client.commands = new Collection()
 client.aliases = new Collection()
@@ -20,6 +24,18 @@ client.slashCommands = new Collection();
 client.prefix = config.prefix
 
 module.exports = client;
+handler.connectDb();
+
+handler.db.on('error', async(err)=> {
+	console.log('DB error:', err);
+});
+
+//force db to rest ON
+setInterval(async()=> {
+	await handler.db.query('SELECT * FROM word', (err, result)=> {
+			// console.log(result)
+	});
+}, 8000);
 
 
 [ 'slashCommand', 'events'].forEach((handler) => {
@@ -27,4 +43,4 @@ module.exports = client;
 });
 
 
-client.login('ODQ3Mzc3MzI1MTM2ODA1OTA4.Gs6nSd.WkjBLVcX1cq3sgSviUmoJQ65jroLbMlv-2gHJs')
+client.login(token);

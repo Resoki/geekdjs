@@ -8,10 +8,10 @@ const { REST } = require('@discordjs/rest')
 const AsciiTable = require('ascii-table');
 const table = new AsciiTable().setHeading('Slash Commands', 'Stats').setBorder('|', '=', "0", "0")
 
-const TOKEN = 'ODQ3Mzc3MzI1MTM2ODA1OTA4.Gs6nSd.WkjBLVcX1cq3sgSviUmoJQ65jroLbMlv-2gHJs';
+const {token} = require('../config.json');
 const CLIENT_ID = process.env.CLIENT_ID;
 
-const rest = new REST({ version: '9' }).setToken(TOKEN);
+const rest = new REST({ version: '9' }).setToken(token);
 
 module.exports = (client) => {
 	const slashCommands = []; 

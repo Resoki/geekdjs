@@ -26,20 +26,7 @@ module.exports = {
         type: ApplicationCommandOptionType.String,
         required: true
     },
-    {
-        
-        name: 'role',
-        description: 'La description du pannel',
-        type: ApplicationCommandOptionType.Role,
-        required: true
-    },
-    {
-        
-        name: 'channel',
-        description: 'Le channel où envoyer le pannel.',
-        type: ApplicationCommandOptionType.Channel,
-        required: false
-    }],
+ ],
     run: async (client, interaction) => {
         try {
             if(!interaction.isCommand()) return;
@@ -47,10 +34,10 @@ module.exports = {
                 return interaction.reply(`Tu n'as pas la permission d'envoyer le pannel de reaction role !'`);
             }
 
-            const channel = interaction.options.getChannel('channel');
+           // const channel = interaction.options.getChannel('channel');
             const title = interaction.options.getString('titre');
             const description = interaction.options.getString('description');
-            const roles = interaction.options.getRole('role');
+            // const roles = interaction.options.getRole('role');
 
             const row = new ActionRowBuilder()
             .addComponents(
