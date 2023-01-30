@@ -102,30 +102,8 @@ const loadSlashCommands = async function (client) {
     })();
 
 }
-
-//INITIALISE DATABASE
-const mysql = require('mysql');
-
-const db = mysql.createConnection({
-    host: 'eu-cdbr-west-03.cleardb.net',
-    user: 'b305c4bf57d5eb',
-    password: '966c0324',
-    database: 'heroku_2f251a5b0a27e4e'
-});
-
-const connectDb = async function () {
-    await db.connect((err)=> {
-        if(err) console.log('err',err);
-        if(!err) {
-             console.log(`Connecté à la base de données: ${db.config.database} !\nHost: ${db.config.host}`);
-        }
-    })
-}
-
 module.exports = {
     loadEvents,
     loadCommands,
     loadSlashCommands,
-    connectDb,
-    db
 }
