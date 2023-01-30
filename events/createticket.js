@@ -72,6 +72,7 @@ client.on("interactionCreate", async (interaction) => {
               label: "Western-Union",
               description: `Buy by wester union`,
               value: "buy-western",
+              emoji: '🪙'
             },
           ])
       );
@@ -165,6 +166,7 @@ client.on("interactionCreate", async (interaction) => {
               label: "Western-Union",
               description: `Buy by wester union`,
               value: "buy-western",
+              emoji: '🪙'
             },
           ])
       );
@@ -358,6 +360,7 @@ To close this ticket react with 🔒
               label: "Western-Union",
               description: `Sell by wester union`,
               value: "sell-western",
+              emoji: '🪙'
             },
           ])
       );
@@ -451,6 +454,7 @@ To close this ticket react with 🔒
               label: "Western-Union",
               description: `Sell by wester union`,
               value: "sell-western",
+              emoji: '🪙'
             },
           ])
       );
