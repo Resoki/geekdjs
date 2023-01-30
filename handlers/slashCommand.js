@@ -10,7 +10,7 @@ const table = new AsciiTable().setHeading('Slash Commands', 'Stats').setBorder('
 
 const {token} = require('../config.json');
 const CLIENT_ID = process.env.CLIENT_ID;
-
+const global = require('../config.json');
 const rest = new REST({ version: '9' }).setToken(token);
 
 module.exports = (client) => {
@@ -44,9 +44,9 @@ module.exports = (client) => {
 	(async () => {
 			try {
 				await rest.put(
-					'965542937343692820' ?
-					Routes.applicationGuildCommands('847377325136805908', '965542937343692820') :
-					Routes.applicationCommands('847377325136805908'), 
+					global.guildID ?
+					Routes.applicationGuildCommands(global.botClientID, global.guildID) :
+					Routes.applicationCommands(global.botClientID), 
 					{ body: slashCommands }
 				);
 				console.log(chalk.yellow('Slash Commands • Registered'))
