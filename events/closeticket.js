@@ -1,14 +1,4 @@
 const client = require("..");
-const {
-  EmbedBuilder,
-  ButtonBuilder,
-  ButtonStyle,
-  ActionRowBuilder,
-  ChannelType,
-  PermissionFlagsBits,
-  StringSelectMenuBuilder,
-} = require("discord.js");
-const global = require("../config.json");
 
 client.on("interactionCreate", async (interaction) => {
   try {

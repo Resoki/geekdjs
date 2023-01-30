@@ -1,7 +1,5 @@
 const client = require('..');
 const chalk = require('chalk');
-const { EmbedBuilder, Collection, PermissionsBitField, ButtonBuilder, ButtonStyle, ActionRowBuilder } = require('discord.js')
-const { QuickDB } = require('quick.db'); 
 
 client.on("ready", async() => {
 	const activities = [
