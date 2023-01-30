@@ -213,7 +213,7 @@ To close this ticket react with 🔒
         `
         )
         .setThumbnail(
-          "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Square_Cash_app_logo.svg/1200px-Square_Cash_app_logo.svg.png"
+          "https://www.pngkey.com/png/full/63-635594_28-collection-of-money-exchange-clipart-exchange-clipart.png"
         );
 
       return interaction.reply({ embeds: [embed] });
@@ -264,7 +264,7 @@ To close this ticket react with 🔒
         `
         )
         .setThumbnail(
-          "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Square_Cash_app_logo.svg/1200px-Square_Cash_app_logo.svg.png"
+          "https://www.pngkey.com/png/full/63-635594_28-collection-of-money-exchange-clipart-exchange-clipart.png"
         );
 
       return interaction.reply({ embeds: [embed] });
