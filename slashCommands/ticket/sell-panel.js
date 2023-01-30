@@ -20,10 +20,10 @@ module.exports = {
         const channel = interaction.options.getChannel("channel");
 
         const embed = new EmbedBuilder()
-        .setTitle("__SELL__")
+        .setTitle("__SELL CRYPTO__")
         .setColor(0xFF0)
         .setFooter({ text: 'Cibertex', iconURL: client.user.displayAvatarURL()})
-        .setDescription("Fill out the form and a staff member will get back to you as soon as possible\n Click the corresponding reaction to open a ticket!")
+        .setDescription("Interested in selling Crypto ?\nFill out the form and a staff member will get back to you as soon as possible\n Click the corresponding reaction to open a ticket!")
 
         const selectCyrptoRow = new ActionRowBuilder()
         .addComponents(

@@ -455,7 +455,7 @@ To close this ticket react with 🔒
           ])
       );
       const embed = new EmbedBuilder()
-        .setTitle("__SELL Cash in Person, Please select your payment method__")
+        .setTitle("__SELL USDT, Please select your payment method__")
         .setDescription(
           `Please wait, our professional team will be with you shortly ! \n\n*To close this ticket react with *🔒`
         )
