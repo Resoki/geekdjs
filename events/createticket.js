@@ -65,19 +65,19 @@ client.on("interactionCreate", async (interaction) => {
             {
               label: "Cash in person",
               description: `Buy by cash`,
-              value: "buy-cash",
+              value: "buy-cash-busd",
               emoji: "🤝",
             },
             {
               label: "Western-Union",
               description: `Buy by wester union`,
-              value: "buy-western",
+              value: "buy-western-busd",
               emoji: '🪙'
             },
           ])
       );
       const embed = new EmbedBuilder()
-        .setTitle("__Buy BUSD, Please select your payment method__")
+        .setTitle("__BUY BUSD, Please select your payment method__")
         .setDescription(
           `Please wait, our professional team will be with you shortly ! \n\n*To close this ticket react with *🔒`
         )
@@ -159,13 +159,13 @@ client.on("interactionCreate", async (interaction) => {
             {
               label: "Cash in person",
               description: `Buy by cash`,
-              value: "buy-cash",
+              value: "buy-cash-usdt",
               emoji: "🤝",
             },
             {
               label: "Western-Union",
               description: `Buy by wester union`,
-              value: "buy-western",
+              value: "buy-western-usdt",
               emoji: '🪙'
             },
           ])
@@ -179,7 +179,7 @@ client.on("interactionCreate", async (interaction) => {
       );
 
       const embed = new EmbedBuilder()
-        .setTitle("__Buy USDT, Please select your payment method__")
+        .setTitle("__BUY USDT, Please select your payment method__")
         .setDescription(
           `Please wait, our professional team will be with you shortly ! \n\n*To close this ticket react with *🔒`
         )
@@ -203,8 +203,14 @@ client.on("interactionCreate", async (interaction) => {
     }
 
     if (interaction.values[0] === "buy-cash") {
+      const buttonClose = new ActionRowBuilder().addComponents(
+        new ButtonBuilder()
+          .setCustomId("close-ticket")
+          .setLabel("🔒")
+          .setStyle(ButtonStyle.Secondary)
+      );
       const embed = new EmbedBuilder()
-        .setTitle("__BUY Cash in Person__")
+        .setTitle("__BUY WITH CASH IN PERSON Cash in Person__")
         .setDescription(
           `1. Please enter the amount you want to buy
         Minimum: $ 500 Maximum: No limit\n• Payment available in EUROS/USD\n\n__Meeting requirements__:\n• public places, shopping center, restaurant etc.
@@ -214,16 +220,20 @@ client.on("interactionCreate", async (interaction) => {
 To close this ticket react with 🔒
         `
         )
-        .setThumbnail(
-          "https://www.pngkey.com/png/full/63-635594_28-collection-of-money-exchange-clipart-exchange-clipart.png"
-        );
 
-      return interaction.reply({ embeds: [embed] });
+      return interaction.reply({ embeds: [embed], components: [buttonClose] });
     }
 
     if (interaction.values[0] === "buy-western") {
+      const buttonClose = new ActionRowBuilder().addComponents(
+        new ButtonBuilder()
+          .setCustomId("close-ticket")
+          .setLabel("🔒")
+          .setStyle(ButtonStyle.Secondary)
+      );
+
       const embed = new EmbedBuilder()
-        .setTitle("__BUY WesterUnion__")
+        .setTitle("__BUY WITH WESTERN UNION__")
         .setDescription(
           `1. Please enter the amount you want to buy
         Minimum: $ 500 Maximum: No limit
@@ -242,20 +252,24 @@ To close this ticket react with 🔒
         City:
         
         Our professional team will be with you soon! Please let us know how we may assist you.
-        To close this ticket react with  (modifié)
-        24 janvier 2023
-        
+        To close this ticket react with 🔒
         `
         )
         .setThumbnail("https://cdn-icons-png.flaticon.com/512/217/217427.png");
 
-      return interaction.reply({ embeds: [embed] });
+      return interaction.reply({ embeds: [embed], components: [buttonClose] });
     }
 
     
-    if (interaction.values[0] === "sell-cash") {
+    if (interaction.values[0] === "sell-cash-busd") {
+      const buttonClose = new ActionRowBuilder().addComponents(
+        new ButtonBuilder()
+          .setCustomId("close-ticket")
+          .setLabel("🔒")
+          .setStyle(ButtonStyle.Secondary)
+      );
       const embed = new EmbedBuilder()
-      .setTitle("__SELL Cash in Person__")
+      .setTitle("__SELL BUSD WITH CASH IN PERSON__")
         .setDescription(
           `1. Please enter the amount you want to **sell**
         Minimum: $ 500 Maximum: No limit\n• Payment available in EUROS/USD\n\nMeeting requirements:\n• public places, shopping center, restaurant etc.
@@ -269,12 +283,43 @@ To close this ticket react with 🔒
           "https://www.pngkey.com/png/full/63-635594_28-collection-of-money-exchange-clipart-exchange-clipart.png"
         );
 
-      return interaction.reply({ embeds: [embed] });
+      return interaction.reply({ embeds: [embed], components: [buttonClose] });
     }
 
-    if (interaction.values[0] === "sell-western") {
+    if (interaction.values[0] === "sell-cash-usdt") {
+      const buttonClose = new ActionRowBuilder().addComponents(
+        new ButtonBuilder()
+          .setCustomId("close-ticket")
+          .setLabel("🔒")
+          .setStyle(ButtonStyle.Secondary)
+      );
       const embed = new EmbedBuilder()
-        .setTitle("__SELL WesterUnion__")
+      .setTitle("__SELL USDT WITH CASH IN PERSON__")
+        .setDescription(
+          `1. Please enter the amount you want to **sell**
+        Minimum: $ 500 Maximum: No limit\n• Payment available in EUROS/USD\n\nMeeting requirements:\n• public places, shopping center, restaurant etc.
+        • Open trade - contact us for a meetup location
+        • Provide your cell number – we contact you.\n
+        Our professional team will be with you soon! Please let us know how we may assist you.\n\n
+To close this ticket react with 🔒
+        `
+        )
+        .setThumbnail(
+          "https://www.pngkey.com/png/full/63-635594_28-collection-of-money-exchange-clipart-exchange-clipart.png"
+        );
+
+      return interaction.reply({ embeds: [embed], components: [buttonClose] });
+    }
+
+    if (interaction.values[0] === "sell-western-busd") {
+      const buttonClose = new ActionRowBuilder().addComponents(
+        new ButtonBuilder()
+          .setCustomId("close-ticket")
+          .setLabel("🔒")
+          .setStyle(ButtonStyle.Secondary)
+      );
+      const embed = new EmbedBuilder()
+        .setTitle("__SELL BUSD WITH WESTERN UNION__")
         .setDescription(
           `1. Please enter the amount you want to **sell**
         Minimum: $ 500 Maximum: No limit
@@ -298,7 +343,157 @@ To close this ticket react with 🔒
         )
         .setThumbnail("https://cdn-icons-png.flaticon.com/512/217/217427.png");
 
-      return interaction.reply({ embeds: [embed] });
+      return interaction.reply({ embeds: [embed] , components: [buttonClose]});
+    }
+    if (interaction.values[0] === "sell-western-usdt") {
+      const buttonClose = new ActionRowBuilder().addComponents(
+        new ButtonBuilder()
+          .setCustomId("close-ticket")
+          .setLabel("🔒")
+          .setStyle(ButtonStyle.Secondary)
+      );
+      const embed = new EmbedBuilder()
+        .setTitle("__SELL USDT WITH WESTERN UNION__")
+        .setDescription(
+          `1. Please enter the amount you want to **sell**
+        Minimum: $ 500 Maximum: No limit
+        • Payment available in Euros
+        
+        __Note__:
+        • Western Union charges a $40 fee for transfers up to $1500. For larger quantities additional fees may apply.
+        
+        Please fill the required fields below:
+        
+        Recipient
+        First Name:
+        Last Name:
+        Country:
+        State:
+        City:
+        
+        Our professional team will be with you soon! Please let us know how we may assist you.
+        To close this ticket react with 🔒
+        `
+        )
+        .setThumbnail("https://cdn-icons-png.flaticon.com/512/217/217427.png");
+
+      return interaction.reply({ embeds: [embed] , components: [buttonClose]});
+    }
+
+    if (interaction.values[0] === "buy-cash-busd") {
+      const buttonClose = new ActionRowBuilder().addComponents(
+        new ButtonBuilder()
+          .setCustomId("close-ticket")
+          .setLabel("🔒")
+          .setStyle(ButtonStyle.Secondary)
+      );
+      const embed = new EmbedBuilder()
+        .setTitle("__BUY BUSD WITH CASH IN PERSON__")
+        .setDescription(
+          `1. Please enter the amount you want to **sell**
+        Minimum: $ 500 Maximum: No limit\n• Payment available in EUROS/USD\n\nMeeting requirements:\n• public places, shopping center, restaurant etc.
+        • Open trade - contact us for a meetup location
+        • Provide your cell number – we contact you.\n
+        Our professional team will be with you soon! Please let us know how we may assist you.\n\n
+To close this ticket react with 🔒`
+        )
+        .setThumbnail("https://www.pngkey.com/png/full/63-635594_28-collection-of-money-exchange-clipart-exchange-clipart.png");
+
+      return interaction.reply({ embeds: [embed] , components: [buttonClose]});
+    }
+
+    if (interaction.values[0] === "buy-western-busd") {
+      const buttonClose = new ActionRowBuilder().addComponents(
+        new ButtonBuilder()
+          .setCustomId("close-ticket")
+          .setLabel("🔒")
+          .setStyle(ButtonStyle.Secondary)
+      );
+      const embed = new EmbedBuilder()
+        .setTitle("__BUY BUSD WITH WESTER UNION__")
+        .setDescription(
+          `1. Please enter the amount you want to **sell**
+        Minimum: $ 500 Maximum: No limit
+        • Payment available in Euros
+        
+        __Note__:
+        • Western Union charges a $40 fee for transfers up to $1500. For larger quantities additional fees may apply.
+        
+        Please fill the required fields below:
+        
+        Recipient
+        First Name:
+        Last Name:
+        Country:
+        State:
+        City:
+        
+        Our professional team will be with you soon! Please let us know how we may assist you.
+        To close this ticket react with 🔒
+        `
+        )
+        .setThumbnail("https://cdn-icons-png.flaticon.com/512/217/217427.png");
+
+      return interaction.reply({ embeds: [embed] , components: [buttonClose]});
+    }
+
+    if (interaction.values[0] === "buy-western-usdt") {
+      const buttonClose = new ActionRowBuilder().addComponents(
+        new ButtonBuilder()
+          .setCustomId("close-ticket")
+          .setLabel("🔒")
+          .setStyle(ButtonStyle.Secondary)
+      );
+      const embed = new EmbedBuilder()
+        .setTitle("__BUY USDT WITH WESTERN UNION__")
+        .setDescription(
+          `1. Please enter the amount you want to **sell**
+        Minimum: $ 500 Maximum: No limit
+        • Payment available in Euros
+        
+        __Note__:
+        • Western Union charges a $40 fee for transfers up to $1500. For larger quantities additional fees may apply.
+        
+        Please fill the required fields below:
+        
+        Recipient
+        First Name:
+        Last Name:
+        Country:
+        State:
+        City:
+        
+        Our professional team will be with you soon! Please let us know how we may assist you.
+        To close this ticket react with 🔒
+        `
+        
+        )
+        .setThumbnail("https://cdn-icons-png.flaticon.com/512/217/217427.png");
+
+      return interaction.reply({ embeds: [embed] , components: [buttonClose]});
+    }
+
+    if (interaction.values[0] === "buy-cash-usdt") {
+      const buttonClose = new ActionRowBuilder().addComponents(
+        new ButtonBuilder()
+          .setCustomId("close-ticket")
+          .setLabel("🔒")
+          .setStyle(ButtonStyle.Secondary)
+      );
+      const embed = new EmbedBuilder()
+        .setTitle("__BUY USDT WITH CASH IN PERSON__")
+        .setDescription(
+          `1. Please enter the amount you want to **sell**
+          Minimum: $ 500 Maximum: No limit\n• Payment available in EUROS/USD\n\nMeeting requirements:\n• public places, shopping center, restaurant etc.
+          • Open trade - contact us for a meetup location
+          • Provide your cell number – we contact you.\n
+          Our professional team will be with you soon! Please let us know how we may assist you.\n\n
+  To close this ticket react with 🔒
+        `
+        )
+        .setThumbnail("https://www.pngkey.com/png/full/63-635594_28-collection-of-money-exchange-clipart-exchange-clipart.png");
+
+      return interaction.reply({ embeds: [embed] , components: [buttonClose]});
     }
 
     if (interaction.values[0] === "create-ticket-busd-sell") {
@@ -353,13 +548,13 @@ To close this ticket react with 🔒
             {
               label: "Cash in person",
               description: `Sell by cash`,
-              value: "sell-cash",
+              value: "sell-cash-busd",
               emoji: "🤝",
             },
             {
               label: "Western-Union",
               description: `Sell by wester union`,
-              value: "sell-western",
+              value: "sell-western-busd",
               emoji: '🪙'
             },
           ])
@@ -447,13 +642,13 @@ To close this ticket react with 🔒
             {
               label: "Cash in person",
               description: `Sell by cash`,
-              value: "sell-cash",
+              value: "sell-cash-usdt",
               emoji: "🤝",
             },
             {
               label: "Western-Union",
               description: `Sell by wester union`,
-              value: "sell-western",
+              value: "sell-western-usdt",
               emoji: '🪙'
             },
           ])
