@@ -1,17 +1,17 @@
 const { ApplicationCommandType, EmbedBuilder, ButtonBuilder, ActionRowBuilder,SelectMenuBuilder } = require('discord.js');
 
 module.exports = {
-    name: "send-panel-sell",
-    usage: '/send-panel-sell <channel>',
-	description: "Vérifiez le ping du bot.",
+    name: "sell-panel",
+    usage: '/sell-pannel <channel>',
+	description: "Send pannel to create sell ticket",
 	type: ApplicationCommandType.ChatInput,
     category: "info",
     options: [
         {
             name: 'channel',
-            description: 'Channel où envoyer le panel de ticket de vente',
+            description: 'Channel who send pannel',
             type: 7,
-            usage: '**/send-panel**',
+            usage: '**/sell-pannel**',
             channelTypes: ["GUILD_TEXT"],
             required: true
         }
@@ -20,7 +20,7 @@ module.exports = {
         const channel = interaction.options.getChannel("channel");
 
         const embed = new EmbedBuilder()
-        .setTitle("Buy Crypto")
+        .setTitle("Sell")
         .setColor(0xFF0)
         .setFooter({ text: 'Cibertex', iconURL: client.user.displayAvatarURL()})
         .setDescription("fill out the form and a staff member will get back to you as soon as possible\n Click the corresponding reaction to open a ticket!")
@@ -33,12 +33,12 @@ module.exports = {
                 .addOptions([
                     {
                         label: 'BUSD',
-                        description: `Buy BUSD`,
+                        description: `Sell BUSD`,
                         value: 'create-ticket-busd-sell',
                     },
                     {
                         label: 'USDT',
-                        description: `Buy USDT`,
+                        description: `Sell USDT`,
                         value: 'create-ticket-usdt-sell',
                     },
     

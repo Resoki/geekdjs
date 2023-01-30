@@ -1,8 +1,8 @@
 const { ApplicationCommandType, EmbedBuilder, ButtonBuilder, ActionRowBuilder,SelectMenuBuilder } = require('discord.js');
 
 module.exports = {
-    name: "send-panel",
-    usage: '/send-panel <channel>',
+    name: "buy-panel",
+    usage: '/buy-panel <channel>',
 	description: "Vérifiez le ping du bot.",
 	type: ApplicationCommandType.ChatInput,
     category: "info",
@@ -11,7 +11,7 @@ module.exports = {
             name: 'channel',
             description: 'Channel où envoyer le panel de ticket',
             type: 7,
-            usage: '**/send-panel**',
+            usage: '**/buy-panel**',
             channelTypes: ["GUILD_TEXT"],
             required: true
         }
@@ -20,7 +20,7 @@ module.exports = {
         const channel = interaction.options.getChannel("channel");
 
         const embed = new EmbedBuilder()
-        .setTitle("Buy Crypto")
+        .setTitle("Buy")
         .setColor(0xFF0)
         .setFooter({ text: 'Cibertex', iconURL: client.user.displayAvatarURL()})
         .setDescription("fill out the form and a staff member will get back to you as soon as possible\n Click the corresponding reaction to open a ticket!")
