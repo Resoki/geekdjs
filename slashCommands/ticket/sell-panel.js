@@ -44,7 +44,7 @@ module.exports = {
     
                 ]),
         );
-        interaction.channel.send({ content: `Le pannel de ticket a été envoyé dans le channel > ${channel}!`, ephemeral: true });
+        interaction.reply({ content: `Le pannel de ticket a été envoyé dans le channel > ${channel}!`, ephemeral: true });
         return channel.send({ embeds: [embed], components: [selectCyrptoRow] });
 	}
 };
