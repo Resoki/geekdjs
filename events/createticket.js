@@ -52,7 +52,6 @@ client.on("interactionCreate", async (interaction) => {
         content: `Ticket crée avec success dans ${createdChannel}!`,
         ephemeral: true,
       });
-      const emoji = client.emojis.cache.get('1069730746933186570');
 
       const selectRadioRow = new ActionRowBuilder().addComponents(
         new SelectMenuBuilder()
@@ -63,7 +62,7 @@ client.on("interactionCreate", async (interaction) => {
               label: "Cash in person",
               description: `Buy by cash`,
               value: "buy-cash-busd",
-              emoji: emoji,
+              emoji: '🤝',
             },
             {
               label: "Western-Union",
