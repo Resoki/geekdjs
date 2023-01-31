@@ -27,10 +27,6 @@ client.on("interactionCreate", async (interaction) => {
         };
       });
 
-      await interaction.reply({
-        content: `Creating ticket...`,
-        ephemeral: true,
-      });
       const createdChannel = await interaction.guild.channels.create({
         name: ticketName,
         type: ChannelType.GuildText,
@@ -52,10 +48,11 @@ client.on("interactionCreate", async (interaction) => {
         ],
       });
 
-      await interaction.channel.send({
+      await interaction.reply({
         content: `Ticket crée avec success dans ${createdChannel}!`,
         ephemeral: true,
       });
+      const emoji = client.emojis.cache.get('1069730746933186570');
 
       const selectRadioRow = new ActionRowBuilder().addComponents(
         new SelectMenuBuilder()
@@ -66,7 +63,7 @@ client.on("interactionCreate", async (interaction) => {
               label: "Cash in person",
               description: `Buy by cash`,
               value: "buy-cash-busd",
-              emoji: "🤝",
+              emoji: emoji,
             },
             {
               label: "Western-Union",
@@ -120,11 +117,6 @@ client.on("interactionCreate", async (interaction) => {
         };
       });
 
-      await interaction.reply({
-        content: `Creating ticket...`,
-        ephemeral: true,
-      });
-
       const createdChannel = await interaction.guild.channels.create({
         name: ticketName,
         type: ChannelType.GuildText,
@@ -146,7 +138,7 @@ client.on("interactionCreate", async (interaction) => {
         ],
       });
 
-      await interaction.channel.send({
+      await interaction.reply({
         content: `Ticket crée avec success dans ${createdChannel}!`,
         ephemeral: true,
       });
@@ -535,10 +527,6 @@ To close this ticket react with 🔒`
         ],
       });
 
-      await interaction.channel.send({
-        content: `Ticket crée avec success dans ${createdChannel}!`,
-        ephemeral: true,
-      });
 
       const selectRadioRow = new ActionRowBuilder().addComponents(
         new SelectMenuBuilder()
@@ -603,11 +591,6 @@ To close this ticket react with 🔒`
         };
       });
 
-      await interaction.reply({
-        content: `Creating ticket...`,
-        ephemeral: true,
-      });
-
       const createdChannel = await interaction.guild.channels.create({
         name: ticketName,
         type: ChannelType.GuildText,
@@ -629,7 +612,7 @@ To close this ticket react with 🔒`
         ],
       });
 
-      await interaction.channel.send({
+      await interactionreply({
         content: `Ticket crée avec success dans ${createdChannel}!`,
         ephemeral: true,
       });

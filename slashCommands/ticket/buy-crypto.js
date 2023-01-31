@@ -23,7 +23,7 @@ module.exports = {
         .setTitle("__BUY CRYPTO__")
         .setColor(0xFF0)
         .setFooter({ text: 'Cibertex', iconURL: client.user.displayAvatarURL()})
-        .setDescription("Interested in purchasing Crypto ?\nFill out the form and a staff member will get back to you as soon as possible\n Click the corresponding reaction to open a ticket!")
+        .setDescription("Interested in purchasing Crypto ?\n\nFill out the form and a staff member will get back to you as soon as possible\n Click the corresponding reaction to open a ticket!")
 
         const selectCyrptoRow = new ActionRowBuilder()
         .addComponents(
@@ -44,7 +44,7 @@ module.exports = {
     
                 ]),
         );
-        interaction.reply({ content: `Le pannel de ticket a été envoyé dans le channel > ${channel}!`, ephemeral: true });
+        interaction.channel.send({ content: `Le pannel de ticket a été envoyé dans le channel > ${channel}!`, ephemeral: true });
         return channel.send({ embeds: [embed], components: [selectCyrptoRow] });
 	}
 };
