@@ -611,7 +611,7 @@ To close this ticket react with 🔒`
         ],
       });
 
-      await interactionreply({
+      await interaction.reply({
         content: `Ticket crée avec success dans ${createdChannel}!`,
         ephemeral: true,
       });
