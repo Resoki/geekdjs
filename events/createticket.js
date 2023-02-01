@@ -37,6 +37,7 @@ client.on("interactionCreate", async (interaction) => {
             allow: [
               PermissionFlagsBits.SendMessages,
               PermissionFlagsBits.AttachFiles,
+              PermissionFlagsBits.ViewChannel,
             ],
             id: interaction.user.id,
           },
@@ -126,6 +127,7 @@ client.on("interactionCreate", async (interaction) => {
             allow: [
               PermissionFlagsBits.SendMessages,
               PermissionFlagsBits.AttachFiles,
+              PermissionFlagsBits.ViewChannel,
             ],
             id: interaction.user.id,
           },
@@ -496,7 +498,7 @@ To close this ticket react with 🔒`
             PermissionFlagsBits.SendMessages,
             PermissionFlagsBits.AttachFiles,
             PermissionFlagsBits.ManageMessages,
-          ],
+          ]
         };
       });
 
@@ -515,6 +517,7 @@ To close this ticket react with 🔒`
             allow: [
               PermissionFlagsBits.SendMessages,
               PermissionFlagsBits.AttachFiles,
+              PermissionFlagsBits.ViewChannel,
             ],
             id: interaction.user.id,
           },
@@ -599,6 +602,7 @@ To close this ticket react with 🔒`
           {
             allow: [
               PermissionFlagsBits.SendMessages,
+              PermissionFlagsBits.ViewChannel,
               PermissionFlagsBits.AttachFiles,
             ],
             id: interaction.user.id,
