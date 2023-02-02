@@ -210,7 +210,7 @@ client.on("interactionCreate", async (interaction) => {
         • Open trade - contact us for a meetup location
         • Provide your cell number – we contact you.\n
         Our professional team will be with you soon! Please let us know how we may assist you.\n
-To close this ticket react with 🔒
+        *To close this ticket react with* 🔒
         `
         )
 
@@ -244,8 +244,8 @@ To close this ticket react with 🔒
         State:
         City:
         
-        Our professional team will be with you soon! Please let us know how we may assist you.
-        To close this ticket react with 🔒
+        Our professional team will be with you soon! Please let us know how we may assist you.\n
+        *To close this ticket react with* 🔒
         `
         )
         .setThumbnail("https://cdn-icons-png.flaticon.com/512/217/217427.png");
@@ -268,8 +268,8 @@ To close this ticket react with 🔒
         Minimum: $ 500 Maximum: No limit\n• Payment available in EUROS/USD\n\nMeeting requirements:\n• public places, shopping center, restaurant etc.
         • Open trade - contact us for a meetup location
         • Provide your cell number – we contact you.\n
-        Our professional team will be with you soon! Please let us know how we may assist you.\n\n
-To close this ticket react with 🔒
+        Our professional team will be with you soon! Please let us know how we may assist you.\n
+        *To close this ticket react with* 🔒
         `
         )
         .setThumbnail(
@@ -293,8 +293,8 @@ To close this ticket react with 🔒
         Minimum: $ 500 Maximum: No limit\n• Payment available in EUROS/USD\n\nMeeting requirements:\n• public places, shopping center, restaurant etc.
         • Open trade - contact us for a meetup location
         • Provide your cell number – we contact you.\n
-        Our professional team will be with you soon! Please let us know how we may assist you.\n\n
-To close this ticket react with 🔒
+        Our professional team will be with you soon! Please let us know how we may assist you.\n
+        *To close this ticket react with* 🔒
         `
         )
         .setThumbnail(
@@ -330,8 +330,8 @@ To close this ticket react with 🔒
         State:
         City:
         
-        Our professional team will be with you soon! Please let us know how we may assist you.
-        To close this ticket react with 🔒
+        Our professional team will be with you soon! Please let us know how we may assist you.\n
+        *To close this ticket react with* 🔒
         `
         )
         .setThumbnail("https://cdn-icons-png.flaticon.com/512/217/217427.png");
@@ -364,8 +364,8 @@ To close this ticket react with 🔒
         State:
         City:
         
-        Our professional team will be with you soon! Please let us know how we may assist you.
-        To close this ticket react with 🔒
+        Our professional team will be with you soon! Please let us know how we may assist you.\n
+        *To close this ticket react with* 🔒
         `
         )
         .setThumbnail("https://cdn-icons-png.flaticon.com/512/217/217427.png");
@@ -387,8 +387,8 @@ To close this ticket react with 🔒
         Minimum: $ 500 Maximum: No limit\n• Payment available in EUROS/USD\n\nMeeting requirements:\n• public places, shopping center, restaurant etc.
         • Open trade - contact us for a meetup location
         • Provide your cell number – we contact you.\n
-        Our professional team will be with you soon! Please let us know how we may assist you.\n\n
-To close this ticket react with 🔒`
+        Our professional team will be with you soon! Please let us know how we may assist you.\n
+        *To close this ticket react with* 🔒`
         )
         .setThumbnail("https://www.pngkey.com/png/full/63-635594_28-collection-of-money-exchange-clipart-exchange-clipart.png");
 
@@ -421,8 +421,8 @@ To close this ticket react with 🔒`
         State:
         City:
         
-        Our professional team will be with you soon! Please let us know how we may assist you.
-        To close this ticket react with 🔒
+        Our professional team will be with you soon! Please let us know how we may assist you.\n
+        *To close this ticket react with* 🔒
         `
         )
         .setThumbnail("https://cdn-icons-png.flaticon.com/512/217/217427.png");
@@ -456,8 +456,8 @@ To close this ticket react with 🔒`
         State:
         City:
         
-        Our professional team will be with you soon! Please let us know how we may assist you.
-        To close this ticket react with 🔒
+        Our professional team will be with you soon! Please let us know how we may assist you.\n
+        *To close this ticket react with* 🔒
         `
         
         )
@@ -645,7 +645,7 @@ To close this ticket react with 🔒`
           `Please wait, our professional team will be with you shortly ! \n\n*To close this ticket react with *🔒`
         )
         .setThumbnail(
-          "https://i.pinimg.com/originals/0e/17/8a/0e178afcffbb3ddd459c01466238b17d.png"
+          "https://www.coinopsy.com/media/img/quality_logo/tether-usdt.png"
         )
         .setColor(0xffff08)
         .setFooter({
