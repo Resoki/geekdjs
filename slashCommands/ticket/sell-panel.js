@@ -22,7 +22,7 @@ module.exports = {
         const embed = new EmbedBuilder()
         .setTitle("__SELL CRYPTO__")
         .setColor(0xFF0)
-        .setThumbnail('https://media.discordapp.net/attachments/1066754552130445344/1073919534592962670/Bannieres-Cibertex-509x51px-Sell-Crypto_2.png')
+        .setImage('https://media.discordapp.net/attachments/1066754552130445344/1073919534592962670/Bannieres-Cibertex-509x51px-Sell-Crypto_2.png')
         .setFooter({ text: 'Cibertex', iconURL: client.user.displayAvatarURL()})
         .setDescription("Interested in selling Crypto ?\n\nFill out the form and a staff member will get back to you as soon as possible\n Click the corresponding reaction to open a ticket!")
 
