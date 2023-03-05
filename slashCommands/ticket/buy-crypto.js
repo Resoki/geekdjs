@@ -29,8 +29,7 @@ module.exports = {
         const guild = client.guilds.cache.get(global.guildID); // Remplacez "guild_id_here" par l'ID de votre serveur
         const busd = guild.emojis.cache.find(emoji => emoji.name === 'busd');
         const usdt = guild.emojis.cache.find(emoji => emoji.name === 'usdt');
-        console.log('buysd', busd)
-        console.log('USDT', busd)
+    
         const selectCyrptoRow = new ActionRowBuilder()
         .addComponents(
             new SelectMenuBuilder()
