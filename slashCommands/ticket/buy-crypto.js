@@ -41,13 +41,13 @@ module.exports = {
                         label: 'BUSD',
                         description: `Buy BUSD`,
                         value: 'create-ticket-busd',
-                        emoji: { name: 'busd' }
+                        emoji: busd.toString()
                     },
                     {
                         label: 'USDT',
                         description: `Buy USDT`,
                         value: 'create-ticket-usdt',
-                        emoji:  { name: 'usdt' }
+                        emoji: usdt.toString()
                     },
     
                 ]),
