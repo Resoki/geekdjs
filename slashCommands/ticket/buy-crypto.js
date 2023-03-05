@@ -1,5 +1,5 @@
-const { ApplicationCommandType, EmbedBuilder, ButtonBuilder, ActionRowBuilder,SelectMenuBuilder } = require('discord.js');
-
+const {  EmbedBuilder, ActionRowBuilder,SelectMenuBuilder } = require('discord.js');
+const global = require('../../config.json');
 module.exports = {
     name: "buy-panel",
     usage: '/buy-panel <channel>',
@@ -26,7 +26,10 @@ module.exports = {
         .setImage('https://media.discordapp.net/attachments/1066754552130445344/1073919091804475443/Bannieres-Cibertex-509x51px-Buy-Crypto.png')
         .setFooter({ text: 'Cibertex', iconURL: client.user.displayAvatarURL()})
         .setDescription("Interested in purchasing Crypto ?\n\nFill out the form and a staff member will get back to you as soon as possible\n Click the corresponding reaction to open a ticket!")
-
+        const guild = client.guilds.cache.get(global.guildID); // Remplacez "guild_id_here" par l'ID de votre serveur
+        const busd = guild.emojis.cache.find(emoji => emoji.name === 'busd');
+        const usdt = guild.emojis.cache.find(emoji => emoji.name === 'usdt');
+        console.log('buysd', busd)
         const selectCyrptoRow = new ActionRowBuilder()
         .addComponents(
             new SelectMenuBuilder()
@@ -37,11 +40,13 @@ module.exports = {
                         label: 'BUSD',
                         description: `Buy BUSD`,
                         value: 'create-ticket-busd',
+                        emoji: busd
                     },
                     {
                         label: 'USDT',
                         description: `Buy USDT`,
                         value: 'create-ticket-usdt',
+                        emoji: usdt
                     },
     
                 ]),
