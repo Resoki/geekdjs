@@ -1,4 +1,4 @@
-const {  EmbedBuilder, ActionRowBuilder,SelectMenuBuilder } = require('discord.js');
+const {  EmbedBuilder, ActionRowBuilder,SelectMenuBuilder , ApplicationCommandType } = require('discord.js');
 const global = require('../../config.json');
 module.exports = {
     name: "buy-panel",
