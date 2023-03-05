@@ -30,6 +30,7 @@ module.exports = {
         const busd = guild.emojis.cache.find(emoji => emoji.name === 'busd');
         const usdt = guild.emojis.cache.find(emoji => emoji.name === 'usdt');
         console.log('buysd', busd)
+        console.log('USDT', busd)
         const selectCyrptoRow = new ActionRowBuilder()
         .addComponents(
             new SelectMenuBuilder()
@@ -40,13 +41,13 @@ module.exports = {
                         label: 'BUSD',
                         description: `Buy BUSD`,
                         value: 'create-ticket-busd',
-                        emoji: busd
+                        emoji: { name: 'busd' }
                     },
                     {
                         label: 'USDT',
                         description: `Buy USDT`,
                         value: 'create-ticket-usdt',
-                        emoji: usdt
+                        emoji:  { name: 'usdt' }
                     },
     
                 ]),
