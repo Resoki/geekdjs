@@ -76,7 +76,7 @@ client.on("interactionCreate", async (interaction) => {
       const embed = new EmbedBuilder()
         .setTitle("__BUY BUSD, Please select your payment method__")
         .setDescription(
-          `Please wait, our professional team will be with you shortly ! \n\n*To close this ticket react with *🔒`
+          `Please wait, our professional team will be with you shortly ! \n*To close this ticket react with *🔒`
         )
         .setThumbnail(
           "https://i.pinimg.com/originals/0e/17/8a/0e178afcffbb3ddd459c01466238b17d.png"
