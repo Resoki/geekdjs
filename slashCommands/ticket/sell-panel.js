@@ -1,5 +1,5 @@
 const { ApplicationCommandType, EmbedBuilder, ButtonBuilder, ActionRowBuilder,SelectMenuBuilder } = require('discord.js');
-
+const global = require('../../config.json');
 module.exports = {
     name: "sell-panel",
     usage: '/sell-pannel <channel>',
