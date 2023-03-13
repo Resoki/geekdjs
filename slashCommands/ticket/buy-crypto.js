@@ -21,7 +21,6 @@ module.exports = {
 
         const embedImage = new EmbedBuilder()
         .setImage('https://media.discordapp.net/attachments/1066754552130445344/1073919091804475443/Bannieres-Cibertex-509x51px-Buy-Crypto.png')
-        .setTimestamp()
 
         const embed = new EmbedBuilder()
         .setTitle("__BUY CRYPTO__")
