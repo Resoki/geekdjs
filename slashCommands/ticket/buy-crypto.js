@@ -19,11 +19,14 @@ module.exports = {
 	run: async (client, interaction) => {
         const channel = interaction.options.getChannel("channel");
 
+        const embedImage = new EmbedBuilder()
+        .setImage('https://media.discordapp.net/attachments/1066754552130445344/1073919091804475443/Bannieres-Cibertex-509x51px-Buy-Crypto.png')
+        .setTimestamp()
+
         const embed = new EmbedBuilder()
         .setTitle("__BUY CRYPTO__")
         .setColor(0xFF0)
         .setThumbnail('https://incrypted.com/wp-content/uploads/2022/11/BUSD-vs-USDT-1-scaled.jpg')
-        .setImage('https://media.discordapp.net/attachments/1066754552130445344/1073919091804475443/Bannieres-Cibertex-509x51px-Buy-Crypto.png')
         .setFooter({ text: 'Cibertex', iconURL: client.user.displayAvatarURL()})
         .setDescription("Interested in purchasing Crypto ?\n\nFill out the form and a staff member will get back to you as soon as possible\n Click the corresponding reaction to open a ticket!")
         const guild = client.guilds.cache.get(global.guildID); // Remplacez "guild_id_here" par l'ID de votre serveur
@@ -52,6 +55,6 @@ module.exports = {
                 ]),
         );
         interaction.reply({ content: `Le pannel de ticket a été envoyé dans le channel > ${channel}!`, ephemeral: true });
-        return channel.send({ embeds: [embed], components: [selectCyrptoRow] });
+        return channel.send({ embeds: [embedImage, embed], components: [selectCyrptoRow] });
 	}
 };
