@@ -1,5 +1,7 @@
 const { ApplicationCommandType, ApplicationCommandOptionType, EmbedBuilder } = require('discord.js');
 
+const convertEpochToDate = ((epoch) => new Date(epoch).toLocaleDateString());
+
 module.exports = {
 	name: 'profil',
 	description: "Afficher son profil",
@@ -15,10 +17,10 @@ module.exports = {
     }
   ],
 	run: async (client, interaction) => {
+    if(!interaction.isCommand()) return;
 		const user = interaction.options.getUser('user');
 
     const embedGenerator = async(user) => {
-   
       const member = interaction.guild.members.cache.get(user.id);
       console.log(member);
 
@@ -28,19 +30,11 @@ module.exports = {
       const roles = member._roles
       let tabRole = [];
 
-      const milliseconds = 1575909015 * 1000 // 1575909015000
-
-      const dateObject = new Date(milliseconds)
-
-      const humanDateFormat = dateObject.toLocaleString() //2019-12-9 10:30:15
-
-      await roles.forEach(async(element) => {
-        tabRole.push(`<@&${element}>`)
-      }) 
+      await roles.forEach(async(element) => tabRole.push(`<@&${element}>`));
 
       const embedProfil = new  EmbedBuilder()
       .setTitle(`${member.user.username}#${member.user.discriminator}`)
-      .addFields({name: `Infos =>`, value: `📅 Compte crée le: ${joinOn}\nRejoin le serveur le: ${joinGuildOn}\n${isBot}`})
+      .addFields({name: `Infos =>`, value: `📅 Compte crée le: ${convertEpochToDate(joinOn)}\nRejoin le serveur le: ${convertEpochToDate(joinGuildOn)}\n${isBot}`})
       .addFields({name: `Rôle (${tabRole.length === 0 ?  '0' : tabRole.length}) =>`, value: `📛 ${tabRole}`, inline: true})
       .setColor(0x0099FF)
       .setThumbnail(user.displayAvatarURL())

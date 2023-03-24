@@ -1,7 +1,8 @@
 {
 	"prefix": "/",
-	"token": "MTA2OTY2NTg2MDQ4ODI4MjE0Mw.GhpjZr.KI7lCbvhESwyrhSX3O-vVbz6XKfrt2qHtrU7ns",
-	"botClientID": "1069665860488282143",
-	"guildID": "1061810721672929300",
-	"ticketsSupportRoles": ["1065331589560684594"]
+	"token": "ODQ3Mzc3MzI1MTM2ODA1OTA4.G5GAcK.m34qWzRMReUx1GtF2cqJHxuTpi23rj4Kr4t6Ao",
+	"botClientID": "847377325136805908",
+	"guildID": "965542937343692820",
+	"ticketsSupportRoles": ["965543563414892545"],
+	"mongoUrl": "mongodb+srv://Resoki:Ballon32%2F@cluster0.nsmmcu2.mongodb.net/test?retryWrites=true&w=majority"
 }
