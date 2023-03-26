@@ -35,6 +35,15 @@ module.exports = {
       infoCommandsList.push(name);
     });
 
+    
+    const ticketCommandsList = [];
+    readdirSync(`./slashCommands/ticket`).forEach((file) => {
+      const filen = require(`../../slashCommands/ticket/${file}`);
+      const name = `\`${filen.name}\``;
+      ticketCommandsList.push(name);
+    });
+
+
     const helpEmbed = new EmbedBuilder()
       .setTitle(`${client.user.username} 2022`)
       .setDescription(
@@ -53,6 +62,11 @@ module.exports = {
       .addFields({
         name: "📩 - Core SlashCommands",
         value: coreCommandsList.map((data) => `${data}`).join(", "),
+        inline: true,
+      })
+      .addFields({
+        name: "📩 - Ticket SlashCommands",
+        value: infoCommandsList.map((data) => `${data}`).join(", "),
         inline: true,
       });
 
