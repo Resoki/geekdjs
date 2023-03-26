@@ -54,6 +54,7 @@ module.exports = {
     const helpEmbed = new EmbedBuilder()
       .setTitle(`${client.user.username} 2022`)
       .setTimestamp()
+      .setColor(0xf0f1f4)
       .setDescription(
         ` Hello **<@${interaction.member.id}>**, Je suis le bot d'assistance <@${client.user.id}>.  \nTu peux utiliser \`/help <slash_command>\` pour voir plus d'info des SlashCommands!`
       )
