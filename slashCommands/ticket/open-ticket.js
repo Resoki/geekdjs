@@ -41,7 +41,7 @@ module.exports = {
         .setPlaceholder(`Selectionne ta catégorie`)
         .addOptions([
           {
-            label: "Besoin d'informations ℹ️",
+            label: "Besoin d'aide ℹ️",
             description: `Besoin d'aide`,
             value: "create-ticket-one",
           },
