@@ -26,7 +26,7 @@ module.exports = {
     const channel = interaction.options.getChannel("channel");
     const embed = new EmbedBuilder()
       .setThumbnail(
-        "https://png.pngtree.com/png-vector/20221121/ourmid/pngtree-need-help-with-question-mark-speech-bubble-template-vector-design-png-image_6472531.png"
+        "https://media.discordapp.net/attachments/1086308867190825062/1089614877561204776/logo_lunerya_1.png"
       )
       .setTitle("__Besoin d'aide ?__")
       .setColor(0xff0)
