@@ -28,7 +28,7 @@ module.exports = {
       .setThumbnail(
         "https://media.discordapp.net/attachments/1086308867190825062/1089614877561204776/logo_lunerya_1.png"
       )
-      .setTitle("__Besoin d'aide ?__")
+      .setTitle("__Ouvrir un ticket__")
       .setColor(0xff0)
       .setFooter({ text: "Cibertex", iconURL: client.user.displayAvatarURL() })
       .setDescription(
@@ -41,7 +41,7 @@ module.exports = {
         .setPlaceholder(`Selectionne ta catégorie`)
         .addOptions([
           {
-            label: "Besoin d' ℹ️",
+            label: "Besoin d'informations ℹ️",
             description: `Besoin d'aide`,
             value: "create-ticket-one",
           },
