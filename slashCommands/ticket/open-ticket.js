@@ -41,13 +41,13 @@ module.exports = {
         .setPlaceholder(`Selectionne ta catégorie`)
         .addOptions([
           {
-            label: "1",
-            description: `Categorie 1`,
+            label: "Besoin d' ℹ️",
+            description: `Besoin d'aide`,
             value: "create-ticket-one",
           },
           {
-            label: "2",
-            description: `Categorie 2`,
+            label: "Plainte 📜",
+            description: `Plainte`,
             value: "create-ticket-two",
           },
         ])

@@ -54,7 +54,7 @@ client.on("interactionCreate", async (interaction) => {
       });
 
       const embed = new EmbedBuilder()
-        .setTitle("__Categorie 1__")
+        .setTitle("__Besoin d'aide__")
         .setDescription(
           `<@${interaction.member.user.id}> Merci d'attendre, un staff vous assistera bientôt ! \n*Pour fermer le ticket réagis avec *🔒`
         )
@@ -122,7 +122,7 @@ client.on("interactionCreate", async (interaction) => {
       });
 
       const embed = new EmbedBuilder()
-        .setTitle("__Categorie 2__")
+        .setTitle("__Plainte__")
         .setDescription(
           `<@${interaction.member.user.id}> Merci d'attendre, un staff vous assistera bientôt ! \n*Pour fermer le ticket réagis avec *🔒`
         )
