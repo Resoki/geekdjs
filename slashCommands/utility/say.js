@@ -22,7 +22,8 @@ module.exports = {
     if (!interaction.isCommand()) return;
     const content = interaction.options.getString("message");
     const embed = new EmbedBuilder()
-      .setDescription(`${content}`)
+      .setDescription(`${content}\nBy <@${interaction.member.user.id}>`)
+      .setTimestamp()
       .setColor(0xf2ff);
     return interaction.channel.send({ embeds: [embed] });
   },

@@ -43,9 +43,17 @@ module.exports = {
       ticketCommandsList.push(name);
     });
 
+    const modCommandsList = [];
+    readdirSync(`./slashCommands/ticket`).forEach((file) => {
+      const filen = require(`../../slashCommands/mod/${file}`);
+      const name = `\`${filen.name}\``;
+      modCommandsList.push(name);
+    });
+
 
     const helpEmbed = new EmbedBuilder()
       .setTitle(`${client.user.username} 2022`)
+      .setTimestamp()
       .setDescription(
         ` Hello **<@${interaction.member.id}>**, Je suis le bot d'assistance <@${client.user.id}>.  \nTu peux utiliser \`/help <slash_command>\` pour voir plus d'info des SlashCommands!`
       )
@@ -60,27 +68,18 @@ module.exports = {
         inline: true,
       })
       .addFields({
-        name: "📩 - Core SlashCommands",
-        value: coreCommandsList.map((data) => `${data}`).join(", "),
-        inline: true,
-      })
-      .addFields({
         name: "📩 - Ticket SlashCommands",
         value: infoCommandsList.map((data) => `${data}`).join(", "),
         inline: true,
+      })
+      .addFields({
+        name: "📩 - Mod SlashCommands",
+        value: modCommandsList.map((data) => `${data}`).join(", "),
+        inline: true,
       });
-
-    const helpButtons = new ActionRowBuilder().addComponents([
-      new ButtonBuilder()
-        .setLabel("Site Web")
-        .setURL("https://resoki-dev.tech")
-        .setStyle(ButtonStyle.Link)
-        .setEmoji("🌐"),
-    ]);
 
     return interaction.reply({
       embeds: [helpEmbed],
-      components: [helpButtons],
     });
   },
 };
