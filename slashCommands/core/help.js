@@ -69,7 +69,7 @@ module.exports = {
       })
       .addFields({
         name: "📩 - Ticket SlashCommands",
-        value: infoCommandsList.map((data) => `${data}`).join(", "),
+        value: ticketCommandsList.map((data) => `${data}`).join(", "),
         inline: true,
       })
       .addFields({
