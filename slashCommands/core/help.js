@@ -44,7 +44,7 @@ module.exports = {
     });
 
     const modCommandsList = [];
-    readdirSync(`./slashCommands/ticket`).forEach((file) => {
+    readdirSync(`./slashCommands/mod`).forEach((file) => {
       const filen = require(`../../slashCommands/mod/${file}`);
       const name = `\`${filen.name}\``;
       modCommandsList.push(name);
