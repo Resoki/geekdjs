@@ -56,7 +56,7 @@ client.on("interactionCreate", async (interaction) => {
       const embed = new EmbedBuilder()
         .setTitle("__Besoin d'aide__")
         .setDescription(
-          `<@${interaction.member.user.id}> Merci d'attendre, un staff vous assistera bientôt ! \n*Pour fermer le ticket réagis avec *🔒`
+          `Bonjour <@${interaction.member.user.id}>, votre ticket a été ouvert.\nLe ticket est uniquement visible par le staff ! \n*Pour fermer le ticket réagis avec *🔒`
         )
         .setColor(0xffff08)
         .setFooter({

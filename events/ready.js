@@ -3,8 +3,8 @@ const chalk = require("chalk");
 
 client.on("ready", async () => {
   const activities = [
-    { name: `Bot DJS`, type: 5 }, // LISTENING
-    { name: `Discord.js v14`, type: 5 }, // COMPETING
+    { name: `play.lunerya.fr`, type: 5 }, // LISTENING
+    { name: `play.lunerya.fr`, type: 5 }, // COMPETING
   ];
   const status = ["Playing", "Playing"];
   let i = 0;
