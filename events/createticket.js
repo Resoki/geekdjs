@@ -11,7 +11,6 @@ const global = require("../config.json");
 
 client.on("interactionCreate", async (interaction) => {
   try {
-    if (!interaction.isSelectMenu()) return;
 
     if (interaction.values[0] === "create-ticket-one") {
       let ticketName = `ticket-${interaction.user.username}`.toLowerCase();
