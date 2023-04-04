@@ -4,6 +4,6 @@
 	"botClientID": "1089601810894950571",
 
 	"guildID": "822852619256463370",
-	"ticketsSupportRoles": ["822873439047516210"],
+	"ticketsSupportRoles": ["822873439047516210", "822873443900194856"],
 	"mongoUrl": "mongodb+srv://Resoki:Ballon32%2F%2F%2F%2F@cluster0.nsmmcu2.mongodb.net/test?retryWrites=true&w=majority"
 }

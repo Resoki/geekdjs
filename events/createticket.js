@@ -30,7 +30,7 @@ client.on("interactionCreate", async (interaction) => {
         name: ticketName,
         type: ChannelType.GuildText,
         topic: `${interaction.user.id}`,
-        parent: "822863780265590844",
+        parent: "822896392157921330",
         permissionOverwrites: [
           {
             allow: [
@@ -98,7 +98,7 @@ client.on("interactionCreate", async (interaction) => {
         name: ticketName,
         type: ChannelType.GuildText,
         topic: `${interaction.user.id}`,
-        parent: "822863780265590844",
+        parent: "822896392157921330",
         permissionOverwrites: [
           {
             allow: [
